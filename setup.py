@@ -9,7 +9,7 @@ import sys
 import setuptools
 import versioneer
 
-import ncolony as module
+import mainland as module
 
 setuptools.setup(
     url='https://github.com/moshez/mainland',

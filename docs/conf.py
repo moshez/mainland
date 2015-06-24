@@ -6,7 +6,7 @@ import sys
 up = os.path.dirname(os.path.dirname(__file__))
 sys.path.append(up)
 
-import ncolony as module
+import mainland as module
 
 extensions = [
     'sphinx.ext.autodoc',
