@@ -17,3 +17,9 @@ class TestGetModule(unittest.TestCase):
     def test_suffix(self):
         m = mymain.getModule('mainla', suffix=['nd'])
         self.assertIs(m, sys.modules['mainland'])
+
+
+class TestMain(unittest.TestCase):
+
+    def test_nothing(self):
+        mymain.main()
