@@ -28,3 +28,5 @@ __version__ = get_versions()['version']
 del get_versions
 
 from mainland._main import main
+
+main = main
