@@ -29,3 +29,13 @@ class TestMain(unittest.TestCase):
         argv = ['pseudomain', 'dummy1']
         ret = mymain.main(argv, root='mainland.tests', marker='DUMMY_MAINLAND_OK')
         self.assertEquals(ret, argv[1:])
+
+    def test_fail(self):
+        argv = ['pseudomain']
+        with self.assertRaises(SystemExit):
+            mymain.main(argv, root='mainland.tests', marker='DUMMY_MAINLAND_OK')
+
+    def test_no_marker(self):
+        argv = ['pseudomain', 'dummy1']
+        with self.assertRaises(SystemExit):
+            mymain.main(argv, root='mainland.tests')
