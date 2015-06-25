@@ -1,3 +1,6 @@
+# Copyright (c) Moshe Zadka
+# See LICENSE for details.
+
 if __name__ != '__main__':
     raise ImportError('module cannot be imported')
 

@@ -1,3 +1,6 @@
+# Copyright (c) Moshe Zadka
+# See LICENSE for details.
+
 import unittest
 import sys
 
