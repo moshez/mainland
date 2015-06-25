@@ -27,15 +27,22 @@ class TestMain(unittest.TestCase):
 
     def test_simple_dummy1(self):
         argv = ['pseudomain', 'dummy1']
-        ret = mymain.main(argv, root='mainland.tests', marker='DUMMY_MAINLAND_OK')
+        ret = mymain.main(argv, root='mainland.tests',
+                          marker='DUMMY_MAINLAND_OK')
         self.assertEquals(ret, argv[1:])
 
     def test_fail(self):
         argv = ['pseudomain']
         with self.assertRaises(SystemExit):
-            mymain.main(argv, root='mainland.tests', marker='DUMMY_MAINLAND_OK')
+            mymain.main(argv, root='mainland.tests',
+                        marker='DUMMY_MAINLAND_OK')
 
     def test_no_marker(self):
         argv = ['pseudomain', 'dummy1']
+        with self.assertRaises(SystemExit):
+            mymain.main(argv, root='mainland.tests')
+
+    def test_no_module(self):
+        argv = ['pseudomain', 'dummy1hahahaidontexist']
         with self.assertRaises(SystemExit):
             mymain.main(argv, root='mainland.tests')

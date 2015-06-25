@@ -3,16 +3,19 @@ import importlib
 
 def main(argv, root, suffix=None, marker=None):
     argv = list(argv)
-    oldArgv0 = argv.pop(0)
+    argv.pop(0)
     if not argv:
         raise SystemExit('Need subcommand name')
     moduleName = argv[0]
     if not root.endswith('.'):
         root += '.'
     moduleName = root + moduleName
-    if marker == None:
+    if marker is None:
         marker = root.upper() + 'MAIN_OK'
-    module = getModule(moduleName, suffix)
+    try:
+        module = getModule(moduleName, suffix)
+    except ImportError:
+        raise SystemExit('Could not find command ' + moduleName)
     if not getattr(module, marker, False):
         raise SystemExit('module is not runnable ' + moduleName)
     return module.main(argv)
