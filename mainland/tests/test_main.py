@@ -18,8 +18,14 @@ class TestGetModule(unittest.TestCase):
         m = mymain.getModule('mainla', suffix=['nd'])
         self.assertIs(m, sys.modules['mainland'])
 
+    def test_suffix_second(self):
+        m = mymain.getModule('mainla', suffix=['', 'nd'])
+        self.assertIs(m, sys.modules['mainland'])
+
 
 class TestMain(unittest.TestCase):
 
-    def test_nothing(self):
-        mymain.main()
+    def test_simple_dummy1(self):
+        argv = ['pseudomain', 'dummy1']
+        ret = mymain.main(argv, root='mainland.tests', marker='DUMMY_MAINLAND_OK')
+        self.assertEquals(ret, argv[1:])
