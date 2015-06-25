@@ -5,9 +5,9 @@ if __name__ != '__main__':
     raise ImportError('module cannot be imported')
 
 import sys
-from mainland import main
+import mainland
 
-main(
+mainland.main(
     root='mainland',
     marker='MAINLAND_MAIN_OK',
     argv=sys.argv,
