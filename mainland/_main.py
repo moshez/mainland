@@ -1,7 +1,7 @@
 import importlib
 
 
-def main():
+def main(**kwargs):
     pass
 
 
