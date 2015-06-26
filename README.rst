@@ -27,7 +27,7 @@ Release
 
 * admin/release <next version number>
 * GPG sign dist/*<version number>*
-* twine upload
+* admin/upload
 
 Contributors
 =============
