@@ -1,15 +1,16 @@
 # Copyright (c) Moshe Zadka
 # See LICENSE for details.
+import sys
 
 import importlib
 
-
 def main(argv, root, suffix=None, marker=None):
-    argv = list(argv)
     argv.pop(0)
+    moduleName = argv[0]
+    package = sys.modules['__main__'].__package__
+    argv[0] = 'python -m ' + package + ' ' + argv[0]
     if not argv:
         raise SystemExit('Need subcommand name')
-    moduleName = argv[0]
     if not root.endswith('.'):
         root += '.'
     moduleName = root + moduleName
