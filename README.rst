@@ -4,37 +4,7 @@
 mainland
 --------
 
-The main() for your scripts
+ABANDONED.
 
-.. image:: https://travis-ci.org/moshez/mainland.svg?branch=master
-    :target: https://travis-ci.org/moshez/mainland
-
-.. image:: https://readthedocs.org/projects/mainland/badge/?version=latest
-    :alt: Documentation Status
-    :scale: 100%
-    :target: https://readthedocs.org/projects/mainland/
-
-Hacking
-=======
-
-  $ tox
-
-Should DTRT -- if it passes, it means
-unit tests are passing, and 100% coverage.
-
-Release
-========
-
-* admin/release <next version number>
-* GPG sign dist/*<version number>*
-* twine upload
-
-Contributors
-=============
-
-Moshe Zadka <zadka.moshe@gmail.com>
-
-License
-=======
-
-MIT License
+If you want to take over, please contact Moshe.
+If Moshe cannot be reached, @markrwilliams is the backup contact point.
